@@ -1,0 +1,201 @@
+\subsection{Méthode par calcul théorique en utilisant le PFD}
+\subsubsection{Relation relatives au moteur}
+\subsubsection{Équations relatives au réducteur (supposé sans pertes)}
+
+\subsection{diagramme PERT}
+
+\begin{figure}[h!]
+	\centering
+	
+	\tikzset{nodePERT/.style={draw,circle, append after command={
+				[shorten >=\pgflinewidth, shorten <=\pgflinewidth,]
+				([yshift=0.2mm]\tikzlastnode.base) edge  ([yshift=0.4mm]\tikzlastnode.south)
+				([xshift=-0.4mm]\tikzlastnode.east) edge  ([xshift=0.4mm]\tikzlastnode.west)
+			}
+		}
+	}
+	\tikzset{line/.style={very thick,->,>=stealth'}}
+	\tikzset{radius/.style={very thick,-,>=stealth'}}
+	
+	\tikzset{figtive/.style={->,>=stealth',thick,dashed}}
+	\tikzset{cp/.style={double,double equal sign distance,-implies}}
+	
+	
+	\begin{tikzpicture}[thick,scale=1.15, every node/.style={transform shape}]
+	%node 0
+	\node (nodePERT-aa)[nodePERT, fill=white, scale=4] {};
+	\node[above=-0.65cm] at (nodePERT-aa.north) {0};
+	\node[below left] at (nodePERT-aa) {0};
+	\node[below right] at (nodePERT-aa) {0};
+	
+	%node 1
+	\node (nodePERT-bb)[nodePERT,right of=nodePERT-aa,above=3cm ,node distance=4cm, scale=4] {};
+	\node[above=-0.65cm] at (nodePERT-bb.north) {1};
+	\node[below left] at (nodePERT-bb) {6};
+	\node[below right] at (nodePERT-bb) {9};
+	
+	%node 2
+	\node (nodePERT-cc)[nodePERT,right of=nodePERT-aa,above=1cm ,node distance=3cm, fill=white, scale=4] {};
+	\node[above=-0.65cm] at (nodePERT-cc.north) {2};
+	\node[below left] at (nodePERT-cc) {9};
+	\node[below right] at (nodePERT-cc) {12};
+	
+	%node 3
+	\node (nodePERT-dd)[nodePERT,right of=nodePERT-aa,below=1cm ,node distance=3cm, fill=white, scale=4] {};
+	\node[above=-0.65cm] at (nodePERT-dd.north) {3};
+	\node[below left] at (nodePERT-dd) {4};
+	\node[below right] at (nodePERT-dd) {12};
+	
+	%node 4
+	\node (nodePERT-ee)[nodePERT,right of=nodePERT-aa,below=3cm ,node distance=4cm, fill=white, scale=4] {};
+	\node[above=-0.65cm] at (nodePERT-ee.north) {4};
+	\node[below left] at (nodePERT-ee) {7};
+	\node[below right] at (nodePERT-ee) {7};
+	
+	%node 5
+	\node (nodePERT-ff)[nodePERT,right of=nodePERT-aa ,node distance=6.5cm, fill=white, scale=4] {};
+	\node[above=-0.65cm] at (nodePERT-ff.north) {5};
+	\node[below left] at (nodePERT-ff) {12};
+	\node[below right] at (nodePERT-ff) {12};
+	
+	%node 6
+	\node (nodePERT-gg)[nodePERT,right of=nodePERT-aa,above=3cm ,node distance=9cm, fill=white, scale=4] {};
+	\node[above=-0.65cm] at (nodePERT-gg.north) {6};
+	\node[below left] at (nodePERT-gg) {17};
+	\node[below right] at (nodePERT-gg) {18};
+	
+	%node 7
+	\node (nodePERT-hh)[nodePERT,right of=nodePERT-aa,below=3cm ,node distance=9cm, fill=white, scale=4] {};
+	\node[above=-0.65cm] at (nodePERT-hh.north) {7};
+	\node[below left] at (nodePERT-hh) {16};
+	\node[below right] at (nodePERT-hh) {16};
+	
+	%node 8
+	\node (nodePERT-ii)[nodePERT,right of=nodePERT-aa ,node distance=12cm, fill=white, scale=4] {};
+	\node[above=-0.65cm] at (nodePERT-ii.north) {8};
+	\node[below left] at (nodePERT-ii) {21};
+	\node[below right] at (nodePERT-ii) {21};
+	
+	% coodonate 1
+	\coordinate [right of=nodePERT-aa,above=3.7cm ,node distance=1.5cm] (coordonate1);
+	
+	% coodonate 2
+	\coordinate [right of=nodePERT-aa,above=1.7cm ,node distance=1.25cm] (coordonate2);
+	
+	% coodonate 3
+	\coordinate [right of=nodePERT-aa,below=1.7cm ,node distance=1.25cm] (coordonate3);
+	
+	% coodonate 4
+	\coordinate [right of=nodePERT-aa,below=3.7cm ,node distance=1.5cm] (coordonate4);
+	
+	% A' task
+	\draw[line] (nodePERT-aa) -- (coordonate1) -- node [above] {$A'$} node [below] {6} (nodePERT-bb);
+	
+	% B task
+	\draw[line] (nodePERT-aa) -- (coordonate2) --  node [above] {$B$} node [below] {9} (nodePERT-cc);
+	
+	% C task
+	\draw[line] (nodePERT-aa) --  node [above] {$C$} node [below] {11} (nodePERT-ff);
+	
+	% D task
+	\draw[line] (nodePERT-aa) -- (coordonate3) -- node [above] {$D$} node [below] {4} (nodePERT-dd);
+	
+	% E' task
+	\draw[cp] (nodePERT-aa) -- (coordonate4) -- node [above] {$E'$} node [below] {7} (nodePERT-ee);
+	
+	
+	% A'' task
+	\draw[line] (nodePERT-bb) --  node [above] {$A''$} node [below] {4} (nodePERT-gg);
+	
+	% E'' task
+	\draw[line] (nodePERT-ee) --  node [above] {$E''$} node [below] {7} (nodePERT-hh);
+	
+	
+	% figtive1 task
+	\draw[figtive] (nodePERT-cc) --  node [below] {$\varnothing$}  (nodePERT-ff);
+	
+	% figtive2 task
+	\draw[figtive] (nodePERT-dd) --  node [above] {$\varnothing$} (nodePERT-ff);
+	
+	
+	
+	% F task
+	\draw[line] (nodePERT-bb) --  node [above right] {$F$} node [below left] {3} (nodePERT-ff);
+	
+	% G task
+	\draw[cp] (nodePERT-ee) --  node [above left] {$G$} node [below right] {5} (nodePERT-ff);
+	
+	
+	% J task
+	\draw[line] (nodePERT-ff) --  node [above] {$J$} node [below] {6} (nodePERT-ii);
+	
+	% H task
+	\draw[line] (nodePERT-ff) --  node [above left] {$H$} node [below right] {5} (nodePERT-gg);
+	
+	% K task
+	\draw[cp] (nodePERT-ff) --  node [above right] {$K$} node [below left] {4} (nodePERT-hh);
+	
+	% I task
+	\draw[line] (nodePERT-gg) --  node [above right] {$I$} node [below left] {3} (nodePERT-ii);
+	
+	% L task
+	\draw[cp] (nodePERT-hh) --  node [above left] {$L$} node [below right] {5} (nodePERT-ii);
+	
+	\end{tikzpicture}
+	\caption{Diagramme PERT du projet EADS}
+\end{figure}
+
+\newpage
+\subsection{TP d'automatique}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+	
+	\pgfmathdeclarefunction{p}{1}{%
+		\pgfmathparse{(and(#1>-0.2, #1<10))}%
+	}
+	
+	\begin{axis}[title={\sffamily Réponse indicielle d'un système du second ordre $0 < \zeta < 1$},  
+	height=0.3\textheight,
+	width=0.85\textwidth,
+	xlabel={$t$},
+	ylabel={$y_1(t)$},
+	xtick={0, 0.5, ..., 3},
+	ytick={0, 0.2, ..., 1.2},
+	xmin=0, xmax=3,
+	ymin=0, ymax=1.2,
+	domain=0:3,
+	grid=major, % Display a grid
+	grid style={dotted,gray!50}, % set the style
+	legend style={draw=none,at={(0.75,0.25)},anchor=north},
+	legend cell align=left
+	]
+	
+	\addplot[dashed]{1};
+	
+	\addlegendentry{Asymptote}
+	
+	
+	\addplot[color=red,smooth,
+	thick,
+	mark=none,
+	samples=500,domain=0:2*pi]{
+		%(1-(e^(-0.5*5*x)/sqrt(1-(0.5)^2) * (\sin(sqrt(1-(0.5)^2)*5*x)*0.5+\cos(sqrt(1-(0.5)^2)*5*x)*sqrt(1-(0.5)^2)) ) 
+		(1-(e^(-0.5*5*x)/sqrt(1-(0.5)^2) *(sin(sqrt(1-(0.5)^2)*5*deg(x))*0.5+cos(sqrt(1-(0.5)^2)*5*deg(x))*sqrt(1-(0.5)^2))
+	};
+	\addlegendentry{Réponse indicielle $y_1(t)$}
+	
+	\draw [densely dashed] ({rel axis cs:0,0} -| {axis cs:1.45,0})  -- ({rel axis cs:0,0.81} -| {axis cs:1.45,0})  ;	
+	\draw [densely dashed] ({rel axis cs:0,0} -| {axis cs:0.72,0}) -- ({rel axis cs:0,0.97} -| {axis cs:0.72,0})  ;	
+	
+	\end{axis}
+	
+	\node[] at (2.879, 0) (a) {$\bullet$};
+	\node[below left=0cm and -0.60cm of a]{$t_m$};
+	
+	\node[] at (5.779, 0) (b) {$\bullet$};
+	\node[above left=0cm and 0cm of b]{$t_a$};
+	\end{tikzpicture}
+	\caption{\sffamily Réponse indicielle d'un système du second ordre $0 < \zeta < 1$}
+\end{figure}

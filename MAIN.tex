@@ -1,0 +1,168 @@
+%%%%%%% Studiant Template %%%%%%%
+% Template LAB/report ESIEA
+%
+% Author : Armand ITO
+
+% IN built
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Kind of base document and option
+\documentclass[answers,a4paper,twoside]{School-Work-Template}
+
+
+
+\Title{Type de documents}{\textit{version : 1.0}}
+
+
+\author{
+	\begin{tabular}[t]{p{0.4\textwidth}@{\extracolsep{2em}}p{0.4\textwidth}}
+		\rule{0.8\textwidth}{0.4pt}\vspace{1cm}\\
+		\centering ESIEA $^1$  & \centering  MBDA FRANCE $^2$ \tabularnewline
+		\centering  \includegraphics[width=0.4\textwidth]{example-image-a} & \centering  \includegraphics[width=0.4\textwidth]{example-image-b} \tabularnewline
+		Grande École d'ingénieurs dédiée à l'enseignement et à la recherche dans les sciences et technologies du numérique. & Filiale commune de   d’Airbus, de BAE Systems et de Leonardo,  MBDA est un leader mondial et acteur global dans le domaine des missiles et systèmes de missiles.
+	\end{tabular}\vspace{1.5cm}\\
+	\begin{tabular}[t]{p{0.3\textwidth}@{\extracolsep{2em}}p{0.3\textwidth}@{\extracolsep{2em}}p{0.3\textwidth}}
+		\textbf{Maître de stage} :&\textbf{Tuteur pédagogique} : & \textbf{Stagiaire} :\vspace{0.3cm}\\
+		Monsieur & Monsieur & Monsieur\\
+		\hspace{0.2cm}Stéphane CARBILLET, &\hspace{0.2cm}Maxence DELONG, &\hspace{0.2cm}Armand ITO,\\
+		\hspace{0.2cm}\small Architecte Logiciel & \hspace{0.2cm}\small Doctorant & \hspace{0.2cm}\small 2A cycle ingénieur ESIEA\vspace{1cm}\\
+		Lu et approuvé :& Lu et approuvé : & Lu et approuvé :
+	\end{tabular}
+	\thispagestyle{empty}           		
+}
+
+% Abstract Contant
+\abs{...}
+
+\begin{document}
+\oddsidemargin=1.15cm
+
+\backgroundsetup{contents={},scale=1,placement=top,opacity=1,position={6cm,2.2cm}}
+\thispagestyle{empty}
+\AddToShipoutPicture*{\AtPageLowerLeft{\begin{tikzpicture}
+	\draw[ white, path picture = {\node [] at (path picture bounding box.center) {\includegraphics[height=\paperheight,trim=-2cm 0 0 0]{example-image-c}}; } ] (-.5,0)rectangle(2.35,29.70);
+	\draw[ white, very thick,fill](-.5,6)rectangle (2.35,5.9);
+	%\node[rotate=90,color=white,text width=5,align=left] at (1,8) {\Huge{\sffamily\textbf{\contour{gray}{\color{white}Sélection d'une plateforme de virtualisation}}}\\ \Huge{\sffamily\textbf{\contour{gray}{\color{white}en systèmes embarqués }}} \\ \Huge{\sffamily\textbf{\contour{gray}{\color{white}en systèmes embarqués }}} };
+	\node[rotate=90,color=white,text width=5,align=left] at (1,8) {\Huge{\sffamily\textbf{\contour{gray}{\color{white}Sélection d'une plateforme de virtualisation}}}\\ \Huge{\sffamily\textbf{\contour{gray}{\color{white}en systèmes embarqués }}}};
+	\node[rotate=90,color=white] at (1.5, 4) {\LARGE{ \sffamily\textbf{\contour{gray}{\color{white}Contacts}}}};
+	\node at (6.5,5.95){\rule{8cm}{0.4pt}};
+	\node[] (contact) at (3,5.5) {} ;
+	\node[below right, text width=\textwidth] at (contact.north west) {$^1$ {\small Campus de Laval: 38 Rue des Docteurs Calmette et Guérin, 53000 Laval} \\ test \\ test \\ test \\ test \\ test \\ test \\ test \\ test \\ test \\ test };;
+	\end{tikzpicture}}}
+\maketitle
+
+\newpage
+\thispagestyle{empty}
+
+% blank page
+\newpage
+\backgroundsetup{contents={},scale=1,placement=top,opacity=1,position={6cm,2.2cm}}
+\null
+\thispagestyle{empty}%
+%\addtocounter{page}{-2}%
+
+%%%%%%%%%%% DOCUMENT MAIN CONTENT
+
+%% write your document here %%
+%% ↓ example %%
+
+% Aesthetic spacing redefines that look nicer to me than the defaults.
+\newpage
+\thispagestyle{empty}
+\begin{center}
+	\textbf{{\Large Remerciement}}
+\end{center}
+...
+\newpage
+\thispagestyle{empty}
+\section*{Abstract}%
+...
+\newpage
+\thispagestyle{empty}
+\section*{Résumé}%
+...
+\newpage
+\tableofcontents
+
+
+\newpage
+\chapter{Partie Une}
+\section{Démarche}
+\input{cont/Demarche}
+\newpage
+\section{Système}
+\input{cont/Systeme}
+\newpage
+\section{Théorique}
+\input{cont/Theo}
+\newpage
+\chapter{Partie test}
+\section{test}
+...
+\chapter{Partie test}
+\section{test}
+...
+\chapter{Partie test}
+\section{test}
+...
+\chapter{Partie test}
+\section{test}
+...
+\chapter{Partie test}
+\section{test}
+...
+\chapter{Partie test}
+\section{test}
+...
+\chapter{Partie test}
+\section{test}
+...
+\chapter{Partie test}
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+\section{test}
+...
+
+\end{document}
